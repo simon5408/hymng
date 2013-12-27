@@ -609,12 +609,12 @@
 				%>
                 <div>
 					<b>具体费用：</b><br />
-					1,<%=rs("fee1")%>元(日期：<%=fee1Years%>)<br />
-				  	2,<%=rs("fee2")%>元(日期：<%=fee2Years%>)<br />
-				  	3,<%=rs("fee3")%>元(日期：<%=fee3Years%>)<br />
-				  	4,<%=rs("fee4")%>元(日期：<%=fee4Years%>)<br />
-				  	5,<%=rs("fee5")%>元(日期：<%=fee5Years%>)<br />
-					6,<%=rs("fee6")%>元(日期：<%=fee6Years%>)<br />
+					1,<%=rs("fee1")%>元(日期：<%=fee1Years%><br />备注：<%=rs("fee1_memo")%>)<br />
+				  	2,<%=rs("fee2")%>元(日期：<%=fee2Years%><br />备注：<%=rs("fee2_memo")%>)<br />
+				  	3,<%=rs("fee3")%>元(日期：<%=fee3Years%><br />备注：<%=rs("fee3_memo")%>)<br />
+				  	4,<%=rs("fee4")%>元(日期：<%=fee4Years%><br />备注：<%=rs("fee4_memo")%>)<br />
+				  	5,<%=rs("fee5")%>元(日期：<%=fee5Years%><br />备注：<%=rs("fee5_memo")%>)<br />
+					6,<%=rs("fee6")%>元(日期：<%=fee6Years%><br />备注：<%=rs("fee6_memo")%>)<br />
 					<%
 						dfee7 = 0
 						if(IsNull(rs("fee7"))) then 
@@ -628,9 +628,17 @@
 						else
 						  dfee8= rs("fee8")
 						end if
+							fee7Memo = rs("fee7_memo")
+						if(isNULL(fee7Memo)) then
+							fee7Memo = ""
+						end if
+						fee8Memo = rs("fee8_memo")
+						if(isNULL(fee8Memo)) then
+							fee8Memo = ""
+						end if
 					%>
-					7,<%=dfee7%>元(日期：<%=fee7Years%>)<br />
-				  	8,<%=dfee8%>元(日期：<%=fee8Years%>)
+					7,<%=dfee7%>元(日期：<%=fee7Years%><br />备注：<%=fee7Memo%>)<br />
+				  	8,<%=dfee8%>元(日期：<%=fee8Years%><br />备注：<%=fee8Memo%>)
 				</div>
                 <div style="height:20px; background:#e0e0e0">
 					<b>交学校费用：</b> <%=rs("fact_total_fee")%>元
@@ -658,10 +666,10 @@
 				%>
                 <div>
                     <b>实际返利：</b><br />
-				  	1,<%=rs("type_fee1")%>元(日期：<%=typeFee1Years%>)<br />
-				  	2,<%=rs("type_fee2")%>元(日期：<%=typeFee2Years%>)<br />
-				  	3,<%=rs("type_fee3")%>元(日期：<%=typeFee3Years%>)<br />
-				  	4,<%=rs("type_fee4")%>元(日期：<%=typeFee4Years%>)
+				  	1,<%=rs("type_fee1")%>元(日期：<%=typeFee1Years%><br />备注：<%=rs("type_fee1_memo")%>)<br />
+				  	2,<%=rs("type_fee2")%>元(日期：<%=typeFee2Years%><br />备注：<%=rs("type_fee2_memo")%>)<br />
+				  	3,<%=rs("type_fee3")%>元(日期：<%=typeFee3Years%><br />备注：<%=rs("type_fee3_memo")%>)<br />
+				  	4,<%=rs("type_fee4")%>元(日期：<%=typeFee4Years%><br />备注：<%=rs("type_fee4_memo")%>)
                  </div>
                  <% 	
 				  	refundFee1Years = "-"
@@ -688,8 +696,8 @@
                  %>
 				 <div>
 				 	<b>退还费用：</b><br />
-					1,<%=refundFee1%>元(日期：<%=refundFee1Years%>)<br />
-                 	2,<%=refundFee2%>元(日期：<%=refundFee2Years%>)
+					1,<%=refundFee1%>元(日期：<%=refundFee1Years%><br />备注：<%=rs("refund_fee1_memo")%>)<br />
+                 	2,<%=refundFee2%>元(日期：<%=refundFee2Years%><br />备注：<%=rs("refund_fee2_memo")%>)
 				 </div> 
 			</div>
 			</td>
